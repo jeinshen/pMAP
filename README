@@ -1,0 +1,165 @@
+Matlab package for Penalised Method of Alternating Projection (pMAP)
+
+======================================================================
+
+This package is built for the paper:
+
+A Penalized Method of Alternating Projections for Weighted Low-Rank Hankel 
+Matrix Optimization
+
+Author: Jian Shen, University of Southampton
+        Jein-Shan Chen, National Taiwan Normal University
+        Hou-Duo Qi, University of Southampton
+        Naihua Xiu, Beijing Jiaotong University
+
+For any questions on the source code or the paper, please contact:
+ Jian Shen via J.Shen@soton.ac.uk
+
+======================================================================
+
+Package Structure
+
+\Algorithms contains other algorithms used in our paper, including:
+    ANM [4]
+    Cadzow [3]
+    DRI [3]
+    FHIT [1]
+    PGD [2]
+
+\Data contains the data we used to test all candidate methods.
+    DataGenerator: random data generator for all experiments
+
+\Functions contains important sub-functions for pMAP or other methods.
+
+\Result_Reproducing contains the methods for reproducing the tables and 
+    figures in the submitted paper
+
+======================================================================
+
+Implementation and Result Reproducing
+
+Please implement the following scripts to generate the tables and figures
+ used in the submitted paper:
+    generate_Figure_1:
+        Convergence result of pMAP setting W = W1 and W = W2.
+    generate_Figure_2:
+        Convergence and singular value results of pMAP, setting the penalty
+        parameter rho as fixed or updated at each iteration.
+    generate_Table_1:
+        Experiment results for time series denoising problem
+            (Cadzow, DRI and pMAP)
+    generate_Table_2:
+        Experiment results for spectral sparse signal recovery prolem
+            (Cadzowm DRI, FIHT, PGD and pMAP)
+    generate_Table_2_ANM:
+        Experiment results for spectral sparse signal recovery prolem for ANM
+            only
+    generate_Figure_3:
+        Coefficient approximation ased on signal recovery
+            (FIHT, PGD and pMAP)
+    generate_Table_3:
+        Experiment results for spectral sparse signal recovery prolem with 
+        noisy observations
+            (Cadzowm DRI, FIHT, PGD and pMAP)
+    generate_Figure_4:
+        Experiment results for rank sensitivity (rank is wrongly estimated).
+            (FIHT, PGD and pMAP)
+    generate_Figure_5:
+        Performance comparison between solvers
+            (FIHT, PGD and pMAP)
+
+======================================================================
+
+Authorship of the Code
+
+This pMAP package is free and open source for academic and research purposes
+ (non-commercial). However, some algorithms in this package are free for 
+commercial purposes and others not. First you need to contact the authors 
+of your desired algorithm and check with them the appropriate license.
+
+Here we declearify the authership and resources of the following codes 
+those come from previsous published papers. Please contact the authors of 
+each algorithm for the detailed license. 
+
+- Algorithms/ANM
+
+    This package contains the  implementation of the ANM algorithms for estimating 
+    the frequency components of a mixture of s complex sinusoids from a random 
+    subset of n regularly spaced samples, for the paper:
+    
+    [4] G. Tang, B.N. Bhaskar, P. Shah and B, Recht Compressed sensing off the 
+    grid, IEEE transactions on information theory, 59.11(2013), 7465-7490.
+
+    The code of ANM is downloaded from the link:  
+
+    https://inside.mines.edu/~gtang/codes/ctscs_codes.zip
+
+- Algorithms/FIHT
+    
+    This package contains the MATLAB implementation of the IHT and FIHT algorithms 
+    for (multi-dimensional) spectrally sparse signals presented in the paper:
+
+    [1] Cai, J. F., Wang, T., & Wei, K. (2016). Fast and Provable Algorithms for 
+    Spectrally Sparse Signal Reconstruction via Low-Rank Hankel Matrix Completion. 
+    arXiv preprint arXiv:1606.01567.
+    
+    The code of FIHT is downloaded from the link:  
+
+    http://www.sdspeople.fudan.edu.cn/weike/code/FIHT.zip
+
+    Use of this package is free for research purposes only.
+
+- Algorithms/ProjGD
+
+    This package contains the M ATLAB implementation of the Projected Gradient 
+    Descent (PGD) algorithm for recovering (multi-dimensional) spectrally sparse 
+    signals via low rank (multi-level) Hankel matrix completion presented in 
+    the paper:
+
+    [2] Cai, J. F., W ang, T., & W ei, K. (2017). Spectral Compressed Sensing 
+    via Projected Gradient Descent. arXiv preprint arXiv:1707.09726.
+    
+    The code of ProjGD is downloaded from the link:  
+
+    http://www.sdspeople.fudan.edu.cn/weike/code/ProjGD.zip
+
+    Please email tianming-wang@uiowa.edu for bug report and other suggestions.
+
+    Use of this package is free for research purposes only.
+
+- Algorithms/DRI abd Result_Reproducing/plot_figure_3_sub_figure_20/40.m
+
+    These files contain an implementation in Matlab of algorithms and result
+    visualization described in the research paper:
+
+    [3] L. Condat and A. Hirabayashi, "Cadzow Denoising Upgraded: A New Projection 
+    Method for the Recovery of Dirac Pulses from Noisy Linear Measurements",
+    preprint hal-00759253, 2012.
+
+    Author? Laurent Condat, PhD, CNRS research fellow in GIPSA-lab, Grenoble, France.
+
+    The code of DRI is downloaded from the link:  
+
+    https://lcondat.github.io/download/pulses_recovery.m
+
+    This software is governed by the CeCILL license under French law and abiding 
+    by the rules of distribution of free software. You can use, modify and or 
+    redistribute the software under the terms of the CeCILL license as circulated 
+    by CEA, CNRS and INRIA at the following URL: "http://www.cecill.info".
+
+======================================================================
+
+References:
+
+[1] J.-F. Cai, T. Wang and K. Wei, Spectral compressed sensing via projected 
+    gradient descent, SIAM J. Optim., 28(2018), 2625–2653.
+[2] J.-F. Cai, T. Wang and K. Wei, Fast and provable algorithms for spectrally 
+    sparse signal reconstruction via low-rank Hankel matrix completion, 
+    Appl. Comput. Harmon. Anal. 46 (2019), 94–121.
+[3] L. Condat and A. Hirabayashi, Cadzow denoising upgraded: a new projection 
+    method for the recovery of Dirac pulse from noisy linear measurements, 
+    Samp. Theory Signal Image Processing, 14 (2015), 17–47.
+[4] G. Tang, B.N. Bhaskar, P. Shah and B, Recht Compressed sensing off the 
+    grid, IEEE transactions on information theory, 59.11(2013), 7465-7490.
+
+
